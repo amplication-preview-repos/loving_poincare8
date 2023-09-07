@@ -6,3 +6,13 @@ datasource db {
 generator client {
   provider = "prisma-client-js"
 }
+
+model Car {
+  brand        String?
+  createdAt    DateTime @default(now())
+  id           String   @id @default(cuid())
+  inProduction Boolean?
+  licenceId    String?
+  model        String
+  updatedAt    DateTime @updatedAt
+}
